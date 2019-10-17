@@ -1,0 +1,330 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+	<groupId>io.sealights.examples</groupId>
+    <artifactId>sl-maven-cucumber-examples</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!--Dependencies -->
+        <gherkin.version>5.2.0</gherkin.version>
+        <datatable.version>3.0.0</datatable.version>
+        <tag-expressions.version>2.0.2</tag-expressions.version>
+
+        <!--Test Dependencies-->
+        <junit.version>4.12</junit.version>
+        <junit-jupiter.version>5.5.2</junit-jupiter.version>
+        <junit-platform.version>1.5.2</junit-platform.version>
+        <hamcrest.version>2.1</hamcrest.version>
+        <mockito.version>3.0.0</mockito.version>
+        <jackson-databind.version>2.10.0</jackson-databind.version>
+		<lombok.version>1.16.16</lombok.version>
+		<cucumber.version>4.7.1</cucumber.version>
+		
+        <!--Maven plugins-->
+		<maven.compiler.plugin.version>3.8.0</maven.compiler.plugin.version>
+		<maven.surefire.plugin.version>2.19.1</maven.surefire.plugin.version>
+		<!-- The development version  -->
+		<sealights.plugin.version>2.1.0-SNAPSHOT</sealights.plugin.version>
+		<!-- Recent version  -->
+		<!-- <sealights.plugin.version>2.1.598</sealights.plugin.version> -->
+
+		<!-- debugging stuff -->
+<!--         <sealights.skip>true</sealights.skip> -->
+        <sldebugOn>-agentlib:jdwp=transport=dt_socket,server=n,address=localhost:5005,suspend=y</sldebugOn>
+        <sldebugOff> </sldebugOff>
+        <sldebug>${sldebugOff}</sldebug>
+        <!-- Set this for debugging of test listener-->
+        <!-- <sldebug>${sldebugOn}</sldebug> -->
+        
+		<!--  Sealights setting -->
+<!--		<token.file.path>path/to/tokenfile</token.file.path>-->
+<!--		<test.listener.path>path/to/testlistener</test.listener.path>-->
+<!--		<buildscanner.path>path/to/buildscanner</buildscanner.path>-->
+		<!-- Bartosz -->
+<!--		<token.file.path>C:\dev\SeaLights\sl-agents-token.txt</token.file.path>-->
+<!--		<test.listener.path>C:\Users\Bartosz Kaczkowski\IdeaProjects\SL.OnPremise.Agents.Java\java-agent-bootstrapper\target\java-agent-bootstrapper-2.0.0-SNAPSHOT.jar</test.listener.path>-->
+<!--		<buildscanner.path>C:\Users\Bartosz Kaczkowski\IdeaProjects\SL.OnPremise.Agents.Java\java-build-agent\target\java-build-agent-2.0.0-SNAPSHOT.jar</buildscanner.path>-->
+		<!-- Ala -->
+		<tokenfile.path>C:\SL\ENV\tokens\sl-agents-token.txt</tokenfile.path>
+		<testlistener.path>C:\Users\ala schneider\Dev\SL.OnPremise.Agents.Java\java-agent-bootstrapper\target\java-agent-bootstrapper-2.0.0-SNAPSHOT.jar</testlistener.path>
+		<buildscanner.path>C:\Users\ala schneider\Dev\SL.OnPremise.Agents.Java\java-build-agent\target\java-build-agent-2.0.0-SNAPSHOT.jar</buildscanner.path>
+        
+    </properties>
+    
+    <modules>
+        <module>sl-ex-cucum2-junit4</module>
+        <module>sl-ex-cucum3-junit4</module>
+        <module>sl-ex-cucum4-junit4</module>
+        <module>sl-ex-cucum4-testng</module>
+        <module>sl-ex-cucum4-spring</module>
+		<module>sl-ex-cucum5-junit5</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-java</artifactId>
+                <version>${cucumber.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-java8</artifactId>
+                <version>${cucumber.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-spring</artifactId>
+                <version>${cucumber.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-junit</artifactId>
+                <version>${cucumber.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-testng</artifactId>
+                <version>${cucumber.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hamcrest</groupId>
+                <artifactId>hamcrest-core</artifactId>
+                <version>${hamcrest.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter</artifactId>
+                <version>${junit-jupiter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+                <version>${junit-jupiter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.vintage</groupId>
+                <artifactId>junit-vintage-engine</artifactId>
+                <version>${junit-jupiter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-junit-jupiter</artifactId>
+                <version>${mockito.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${mockito.version}</version>
+            </dependency>
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${lombok.version}</version>
+			</dependency>
+        </dependencies>
+    </dependencyManagement>
+    
+    <dependencies>
+ 		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+            <scope>test</scope>
+		</dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <configuration>
+                        <skipIfEmpty>true</skipIfEmpty>
+                    </configuration>
+                </plugin>
+				<plugin>
+					  <groupId>org.apache.maven.plugins</groupId>
+					  <artifactId>maven-war-plugin</artifactId>
+					  <version>3.2.0</version>
+				</plugin>        
+             
+		        <plugin>
+		            <groupId>org.apache.maven.plugins</groupId>
+		            <artifactId>maven-surefire-plugin</artifactId>
+		            <version>${maven.surefire.plugin.version}</version>
+		            <configuration>
+	            		<!-- <argLine>-Xmx1024m @{argLine}</argLine> -->
+						<!-- <forkedProcessTimeoutInSeconds>120</forkedProcessTimeoutInSeconds> -->
+						<!-- <shutdown>exit</shutdown> -->
+		            </configuration>
+	            </plugin>
+	            
+				<plugin>
+					<groupId>io.sealights.on-premise.agents.plugin</groupId>
+					<artifactId>sealights-maven-plugin</artifactId>
+					<version>${sealights.plugin.version}</version>
+					<configuration>
+						<includeResources>true</includeResources>
+						<tokenFile>${tokenfile.path}</tokenFile>
+						<build>${sl.build}</build>
+						<branch>master</branch>
+						<createBuildSessionId>true</createBuildSessionId>
+						<!-- <moduleName>${project.name}</moduleName> -->
+						<workspacepath>${project.build.outputDirectory}</workspacepath>
+						<filesincluded>*.class</filesincluded>
+						<filesStorage>/tmp</filesStorage>
+						<packagesincluded>io.sl.ex.*</packagesincluded>
+						<filesexcluded>*test-classes*</filesexcluded>
+						<logEnabled>true</logEnabled>
+ 						<!-- <logLevel>off</logLevel> -->
+						<logToConsole>true</logToConsole>
+						<!-- <logToFile>true</logToFile> -->
+						<testStage>Unit Tests</testStage>
+						<!-- <buildScannerIgnoreLogEnabled>true</buildScannerIgnoreLogEnabled>  -->
+ 						<!-- <testListenerIgnoreLogEnabled>true</testListenerIgnoreLogEnabled> -->
+						<!-- <enableUpgrade>true</enableUpgrade> -->
+						<!-- This is for fiddler -->
+						<!-- <proxy>127.0.0.1:8888</proxy> -->
+						<sendContributors>true</sendContributors>
+ 						<testListenerJar>${testlistener.path}</testListenerJar>
+						<buildScannerJar>${buildscanner.path}</buildScannerJar>
+  						<sealightsJvmParams>
+ 							<sl.featuresData.ignoreAutoGeneratedMethods>true</sl.featuresData.ignoreAutoGeneratedMethods>
+							<sl.tia.disabled>false</sl.tia.disabled>
+							<sl.tia.pollingTimeoutSec>3</sl.tia.pollingTimeoutSec>
+ 							<sl.httpMaxAttempts>1</sl.httpMaxAttempts>
+						</sealightsJvmParams>
+						<classLoadersExcluded>no</classLoadersExcluded>
+					</configuration>
+					<executions>
+						<execution>
+							<id>a1</id>
+							<goals>
+								<goal>build-scanner</goal>
+							</goals>
+						</execution>
+						<execution>
+							<id>a2</id>
+							<goals>
+								<goal>test-listener</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+           </plugins>
+            
+        </pluginManagement>
+        
+        <plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.plugin.version}</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+        </plugins>
+        
+    </build>
+    
+    <profiles>
+    
+    	<profile>
+			<id>default</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+			        <plugin>
+			            <groupId>org.apache.maven.plugins</groupId>
+			            <artifactId>maven-surefire-plugin</artifactId>
+		            </plugin>
+					<plugin>
+						<groupId>io.sealights.on-premise.agents.plugin</groupId>
+						<artifactId>sealights-maven-plugin</artifactId>
+						<!-- Plugin is not executed -->
+						<executions>
+							<execution>
+								<id>a1</id>
+								<phase>none</phase>
+							</execution>
+							<execution>
+								<id>a2</id>
+								<phase>none</phase>
+							</execution>
+						</executions>						
+					</plugin>
+	           </plugins>
+           </build>
+    	</profile>
+    	
+		<profile>
+			<id>sl-all</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>io.sealights.on-premise.agents.plugin</groupId>
+						<artifactId>sealights-maven-plugin</artifactId>
+						<!-- using different application name and packages -->
+						<configuration>
+							<appName>SL-Maven-Cucumber-Examples</appName>
+						</configuration>
+					</plugin>
+					
+			        <plugin>
+			            <groupId>org.apache.maven.plugins</groupId>
+			            <artifactId>maven-surefire-plugin</artifactId>
+			            <configuration>
+			            	<argLine>@{argLine}</argLine>
+			            </configuration>
+			        </plugin>
+				</plugins>
+			</build>
+		</profile>
+		
+		<profile>
+			<id>sl</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>io.sealights.on-premise.agents.plugin</groupId>
+						<artifactId>sealights-maven-plugin</artifactId>
+						<!-- used the default configuration -->
+					</plugin>
+					
+			        <plugin>
+			            <groupId>org.apache.maven.plugins</groupId>
+			            <artifactId>maven-surefire-plugin</artifactId>
+			        </plugin>
+			        
+				</plugins>
+			</build>
+		</profile>
+    	
+    </profiles>
+    
+</project>
+
