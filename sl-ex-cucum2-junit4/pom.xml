@@ -8,7 +8,7 @@
     </parent>
 
     <artifactId>sl-ex-cucum2-junit4</artifactId>
-    <name>Examples: Calculator JUnit4 and and Older Cucumber</name>
+    <name>Examples: Calculator JUnit4 and Cucumber2</name>
 
     <properties>
 		<cucumber.version>2.4.0</cucumber.version>

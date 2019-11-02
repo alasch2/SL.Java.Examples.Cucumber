@@ -5,8 +5,6 @@ import static org.junit.Assert.assertEquals;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import io.sl.ex.cucumber2.junit4.RpnCalculator;
-
 
 public class RpnCalculatorSteps {
     private RpnCalculator calc;
