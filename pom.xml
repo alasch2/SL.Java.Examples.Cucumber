@@ -37,7 +37,7 @@
         <sldebugOff> </sldebugOff>
         <sldebug>${sldebugOff}</sldebug>
         <!-- Set this for debugging of test listener-->
-        <!-- <sldebug>${sldebugOn}</sldebug> -->
+<!--         <sldebug>${sldebugOn}</sldebug>-->
         
 		<!--  Sealights setting -->
 <!--		<token.file.path>path/to/tokenfile</token.file.path>-->
@@ -188,8 +188,7 @@
 						<filesStorage>/tmp</filesStorage>
 						<packagesincluded>io.sl.ex.*</packagesincluded>
 						<filesexcluded>*test-classes*</filesexcluded>
-						<logEnabled>true</logEnabled>
- 						<!-- <logLevel>off</logLevel> -->
+<!--						<logLevel>debug</logLevel>-->
 						<logToConsole>true</logToConsole>
 						<!-- <logToFile>true</logToFile> -->
 						<testStage>Unit Tests</testStage>
@@ -318,6 +317,9 @@
 			        <plugin>
 			            <groupId>org.apache.maven.plugins</groupId>
 			            <artifactId>maven-surefire-plugin</artifactId>
+						<configuration>
+							<argLine>${sldebug} @{argLine}</argLine>
+						</configuration>
 			        </plugin>
 			        
 				</plugins>
