@@ -1,6 +1,6 @@
-Feature: Shopping
+Feature: One's Shopping
 
-  Scenario: Give correct change
+  Scenario: Give correct change - isn't this great?
     Given the following groceries:
       | name  | price |
       | milk  | 9     |
