@@ -11,9 +11,15 @@
     <name>Examples: Calculator JUnit4 and Cucumber4</name>
 
     <properties>
+        <dev.properties.path>${project.parent.basedir}</dev.properties.path>
     </properties>
 
     <dependencies>
+         <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>

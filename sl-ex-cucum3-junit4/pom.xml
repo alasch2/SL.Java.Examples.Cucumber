@@ -11,10 +11,17 @@
     <name>Examples: Calculator JUnit4 and Cucumber3</name>
 
     <properties>
+        <dev.properties.path>${project.parent.basedir}</dev.properties.path>
 		<cucumber.version>3.0.2</cucumber.version>
+<!--        <sldebug>${sldebugOn}</sldebug>-->
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
