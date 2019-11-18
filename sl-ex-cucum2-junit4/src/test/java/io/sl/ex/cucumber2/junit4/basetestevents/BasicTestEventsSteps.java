@@ -21,6 +21,18 @@ public class BasicTestEventsSteps {
 		assertTrue(true);
 	}
 
+	@Given("^no input - a test example that should pass$")
+	public void no_input_a_test_example_that_should_pass() {
+	}
+
+	@When("^try run the example$")
+	public void try_run_the_example() {
+	}
+
+	@Then("^it also should pass$")
+	public void it_also_should_pass() {
+	}
+	
 	@Given("^no input - a test that should fail$")
 	public void no_input_a_test_that_should_fail() {
 	}

@@ -7,6 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(plugin = "pretty",
         features = "src/test/resources/test_events.feature",
+        monochrome = true,
         tags = {"not @Skipped"})
 public class RunCucumberTest {
 }
