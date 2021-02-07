@@ -61,7 +61,7 @@
 				<groupId>io.sealights.on-premise.agents.plugin</groupId>
 				<artifactId>sealights-maven-plugin</artifactId>
 				<configuration>
-					<appName>SL-Maven-Cucum3-JUnit4-Example</appName>
+					<appName>SL-Maven-Cucum5-JUnit5-Example</appName>
 					<buildScannerIgnoreLogEnabled>true</buildScannerIgnoreLogEnabled>
 				</configuration>
             </plugin>
