@@ -47,13 +47,13 @@
 <!--		<buildscanner.path>path/to/buildscanner</buildscanner.path>-->
 		<!-- Bartosz -->
 <!--		<token.file.path>C:\dev\SeaLights\sl-agents-token.txt</token.file.path>-->
-<!--		<test.listener.path>C:\Users\Bartosz Kaczkowski\IdeaProjects\SL.OnPremise.Agents.Java\java-agent-bootstrapper\target\java-agent-bootstrapper-2.0.0-SNAPSHOT.jar</test.listener.path>-->
-<!--		<buildscanner.path>C:\Users\Bartosz Kaczkowski\IdeaProjects\SL.OnPremise.Agents.Java\java-build-agent\target\java-build-agent-2.0.0-SNAPSHOT.jar</buildscanner.path>-->
+<!--		<test.listener.path>C:\Users\Bartosz Kaczkowski\IdeaProjects\SL.OnPremise.Agents.Java\java-agent-bootstrapper\target\java-agent-bootstrapper-3.0.0-SNAPSHOT.jar</test.listener.path>-->
+<!--		<buildscanner.path>C:\Users\Bartosz Kaczkowski\IdeaProjects\SL.OnPremise.Agents.Java\java-build-agent\target\java-build-agent-3.0.0-SNAPSHOT.jar</buildscanner.path>-->
 		<!-- Ala -->
 		<tokenfile.path>C:\SL\ENV\tokens\sl-agents-token.txt</tokenfile.path>
 <!-- 		<testlistener.path>C:\Users\AlaSchneider\Dev\Playground\agents\sl-test-listener-2.1.1401.jar</testlistener.path> -->
-		<testlistener.path>C:\Users\AlaSchneider\Dev\SL.OnPremise.Agents.Java\java-agent-bootstrapper\target\java-agent-bootstrapper-2.0.0-SNAPSHOT.jar</testlistener.path>
-		<buildscanner.path>C:\Users\AlaSchneider\Dev\SL.OnPremise.Agents.Java\java-build-agent\target\java-build-agent-2.0.0-SNAPSHOT.jar</buildscanner.path>
+		<testlistener.path>C:\Users\AlaSchneider\Dev\SL.OnPremise.Agents.Java\java-agent-bootstrapper\target\java-agent-bootstrapper-3.0.0-SNAPSHOT.jar</testlistener.path>
+		<buildscanner.path>C:\Users\AlaSchneider\Dev\SL.OnPremise.Agents.Java\java-build-agent\target\java-build-agent-3.0.0-SNAPSHOT.jar</buildscanner.path>
         
     </properties>
     
